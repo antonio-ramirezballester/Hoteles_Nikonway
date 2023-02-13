@@ -1,0 +1,21 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+  
+nav{
+    align-items: center;
+    display: flex;
+}
+
+.login{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 50vw;
+}
+
+nav a{
+    margin:5px 1rem;
+}
+

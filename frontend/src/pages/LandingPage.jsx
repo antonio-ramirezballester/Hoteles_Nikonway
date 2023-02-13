@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import UserContext from "../context/user/UserContext";
 import { useNavigate } from "react-router-dom";
-const WelcomePage = () => {
+const LandingPage = () => {
 
   const { user } = useContext(UserContext);
-  const [welcomeInfo, setWelcomeInfo] = useState(null)
+  const [landingInfo, setLandingInfo] = useState(null)
   const navigate = useNavigate();
 
-  const getWelcomeInfo = async (token) => {
+  const getLandingInfo = async (token) => {
     const options = {
       method: 'GET',
       headers: {
@@ -19,9 +19,9 @@ const WelcomePage = () => {
     console.log(options);
 
     try {
-      const response = await fetch('http://localhost:4001/welcome', options);
+      const response = await fetch('http://localhost:4001/landing', options);
       const data = await response.json();
-      setWelcomeInfo(data.message);
+      setLandingInfo(data.message);
     } catch (error) {
       console.log(error);
     }
@@ -31,20 +31,20 @@ const WelcomePage = () => {
     if (!user.name) {
       navigate("/error/1");
     } else {
-      getWelcomeInfo(user.token);
+      getLandingInfo(user.token);
     }
   }, []);
 
   return (
     <>
-      <div>WelcomePage  {user.name}</div>
+      <div>LandingPage  {user.name}</div>
       <div>
         <h2>Private Info</h2>
-        <p>{welcomeInfo}</p>
+        <p>{landingInfo}</p>
       </div>
     </>
 
   )
 }
 
-export default WelcomePage
+export default LandingPage

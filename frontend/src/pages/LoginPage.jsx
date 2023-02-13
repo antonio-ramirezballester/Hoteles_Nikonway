@@ -33,7 +33,7 @@ const LoginPage = () => {
         // LocalStarage
         localStorage.setItem('user', JSON.stringify(data));
         // Redirect
-        navigate("/welcome");
+        navigate("/landing");
       }else{
         setErrorMessage(data.message);
       }

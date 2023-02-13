@@ -5,12 +5,12 @@
 
 }
 
-header{
-  display: flex;
-  justify-content: space-between;
-
+html{
+  --naranja: #ff914c;
+  --gris: #a69d9a;
+  --negro: #343a40;
 }
 
-nav a{
-  margin:5px 1rem;
+body{
+  background-color: var(--gris);
 }

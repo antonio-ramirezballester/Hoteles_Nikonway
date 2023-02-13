@@ -11,11 +11,10 @@ router.post("/register", usersController.registerUser);
 // User login function
 router.post("/login", usersController.loginUser);
 
-// welcome page. Secure Route
-router.get("/welcome", verifyToken , (req, res) => { //El verifytoken protege la ruta. Si no está autenticado no puede entrar a esa ruta.
-    //res.status(200).send("Welcome 🙌 ");
+// landing page. Secure Route
+router.get("/landing", verifyToken , (req, res) => { //El verifytoken protege la ruta. Si no está autenticado no puede entrar a esa ruta.
     res.status(200).json({
-        "message":"Welcome 🙌"
+        "message":"ESTÁS EN LA LANDING PAGE 😎"
     });
 });
 

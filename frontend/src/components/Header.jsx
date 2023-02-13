@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/user/UserContext';
+import { Button } from '@mui/material';
+import './Header.css'
 
 
 const Header = () => {
@@ -27,11 +29,21 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Título</h1>
+      <h1>Hotels Nikonway</h1>
+
       {user.name ?
-        <nav>
+        <nav className='login'>
+          <div className='hotels'>
+            <select name="Hotels" id="hotels" >
+              {/* Pasarlo a dinámico */}
+              <option value="Alcudia">Alcudia</option>
+              <option value="Inca">Inca</option>
+              <option value="Palma">Palma</option>
+            </select>
+          </div>
           <div className='profile'>
-            <a href="#" onClick={() => { logout() }}>Logout</a>
+            <Button href="#" onClick={() => { logout() }} variant="contained">Logout</Button>
+            {/* <a href="#" onClick={() => { logout() }}>Logout</a> */}
             <span>{`${user.name} ${user.surname}` }</span>
           </div>
         </nav>
@@ -40,7 +52,6 @@ const Header = () => {
           <Link to="/registration">Create Account</Link> |
           <Link to="/login">Login</Link>
         </nav>
-
       }
 
     </header >

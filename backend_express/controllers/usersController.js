@@ -46,7 +46,7 @@ export const registerUser = async (req, res) => {
             { user_id: user._id, email },
             process.env.TOKEN_KEY,
             {
-                expiresIn: "2h",
+                expiresIn: "24h", //quiero que expire en 1 día porque un número menor a este me parecería muy bajo.
             }
         );
         // save user token

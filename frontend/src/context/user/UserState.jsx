@@ -3,16 +3,6 @@ import UserContext from "./UserContext";
 
 const UserState = (props) => {
 
-    /*const defaultUser=localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")):{
-        id: null,
-        name: null,
-        surnames: null,
-        email: null,
-        phone: null,
-        token: null,
-        rol: null,
-        language: "en"
-    };*/
     const defaultUser = {
         _id: null,
         name: null,
