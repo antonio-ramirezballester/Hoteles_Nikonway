@@ -1,21 +1,31 @@
+html{
+    --naranja: #ff914c;
+    --gris: #a69d9a;
+    --negro: #343a40;
+  }
+
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: var(--negro);
+}
+
+h1{
+    color: var(--naranja);
+    padding-left: 5vw;
+}
+
+nav{
+    padding-right: 5vw;
 }
   
-nav{
-    align-items: center;
-    display: flex;
-}
-
-.login{
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    width: 50vw;
-}
-
 nav a{
     margin:5px 1rem;
+    text-decoration: none;
+    color: white;
 }
 
+span{
+    padding-left: 1vw;
+}
