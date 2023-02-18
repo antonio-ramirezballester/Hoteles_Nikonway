@@ -1,0 +1,16 @@
+.card{
+    width: 330px;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(255, 145, 0, 0.767), 0 6px 20px 0 rgb(255, 166, 0);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: var(--negro);
+}
+
+.card p{
+    color: white;
+    font-size: 25px;
+}

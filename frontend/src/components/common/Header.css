@@ -11,7 +11,7 @@ header{
     background-color: var(--negro);
 }
 
-h1{
+.h1Header{
     color: var(--naranja);
     padding-left: 5vw;
 }

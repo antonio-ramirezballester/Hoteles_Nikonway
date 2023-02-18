@@ -6,7 +6,7 @@ import ErrorPage from './pages/ErrorPage';
 import RegistrationFormPage from './pages/RegistrationFormPage';
 import LandingPage from './pages/LandingPage';
 import UserState from "./context/user/UserState";
-import Header from './components/Header';
+import Header from './components/common/Header';
 
 function App() {
 

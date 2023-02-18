@@ -4,6 +4,7 @@ import UserContext from "../context/user/UserContext";
 import { useNavigate } from "react-router-dom";
 // import { TextField, Button } from '@mui/material';
 // import SendIcon from '@mui/icons-material/Send';
+import { Button } from '@mui/material';
 
 const RegistrationFormPage = () => {
 
@@ -38,7 +39,7 @@ const RegistrationFormPage = () => {
                 // LocalStarage
                 localStorage.setItem('user', JSON.stringify(data));
                 // Redirect
-                navigate("/welcome");
+                navigate("/landing");
             }
         } catch (error) {
             console.log(error);
@@ -82,9 +83,8 @@ const RegistrationFormPage = () => {
                     {/* <Button type="submit" variant="outlined" value="Enviar" endIcon={<SendIcon />}>Enviar</Button> */}
                     <input type="submit" value="Enviar" />
                 </form>
-                <p> 
-                    If you already have and account:
-                    <Link to="/login">Login</Link>
+                <p style={{color:'white'}}> 
+                    If you already have and account: <span><Link to="/login"><Button variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Login</Button></Link></span>
                 </p>
             </div>
 
