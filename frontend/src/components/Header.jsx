@@ -4,16 +4,6 @@ import UserContext from '../context/user/UserContext';
 import { Button } from '@mui/material';
 import './Header.css'
 
-const useStyles = makeStyles({
-  customButton: {
-    backgroundColor: 'var(--naranja)',
-    color: 'var(--negro)',
-    '&:hover': {
-      backgroundColor: '#CC0000',
-    },
-  },
-});
-
 const Header = () => {
 
   const { user, setUser } = useContext(UserContext);
@@ -43,14 +33,14 @@ const Header = () => {
       {user.name ?
         <nav className='login'>
           <div className='profile'>
-            <Button href="#" onClick={() => { logout() }} variant="contained" className={classes.customButton}>Logout</Button>
+            <Button href="#" onClick={() => { logout() }} variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Logout</Button>
             {/* <a href="#" onClick={() => { logout() }}>Logout</a> */}
             <span style={{color:'var(--naranja)'}}>{`${user.name} ${user.surname}` }</span>
           </div>
         </nav>
         :
         <nav className='notlogin'>
-          <Link to="/registration"><Button variant="contained" className={classes.customButton}>Create Account</Button></Link>
+          <Link to="/registration"><Button variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Create Account</Button></Link>
           <span><Link to="/login"><Button variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Login</Button></Link></span>
         </nav>
       }
