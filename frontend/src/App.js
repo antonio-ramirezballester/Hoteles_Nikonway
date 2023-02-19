@@ -7,6 +7,7 @@ import RegistrationFormPage from './pages/RegistrationFormPage';
 import LandingPage from './pages/LandingPage';
 import UserState from "./context/user/UserState";
 import Header from './components/common/Header';
+import HotelPage from './pages/HotelPage';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route element={<LandingPage />} path="/landing" />
             <Route element={<ErrorPage />} path="/error/:code" />
             <Route element={<RegistrationFormPage />} path="/" />
+            <Route element={<HotelPage/>} path="/producto/:idProducto"/>
           </Routes>
         </BrowserRouter>
       </UserState>
