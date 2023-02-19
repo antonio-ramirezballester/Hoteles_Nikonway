@@ -24,3 +24,10 @@ Route::post('/hotels', 'App\Http\Controllers\HotelController@store');
 Route::get('/hotels/{hotel}', 'App\Http\Controllers\HotelController@show');
 Route::put('/hotels/{hotel}', 'App\Http\Controllers\HotelController@update');
 Route::delete('/hotels/{hotel}', 'App\Http\Controllers\HotelController@destroy');
+
+Route::get('/rooms', 'App\Http\Controllers\RoomController@index');
+Route::get('/rooms/search/{room}', 'App\Http\Controllers\RoomController@searchRoomsByTitle');
+Route::post('/rooms', 'App\Http\Controllers\RoomController@store');
+Route::get('/rooms/{room}', 'App\Http\Controllers\RoomController@show');
+Route::put('/rooms/{room}', 'App\Http\Controllers\RoomController@update');
+Route::delete('/rooms/{room}', 'App\Http\Controllers\RoomController@destroy');

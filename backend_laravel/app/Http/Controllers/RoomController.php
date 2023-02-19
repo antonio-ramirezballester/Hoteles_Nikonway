@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
-class HotelController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::all();
-        return response()->json($hotels);
+        $rooms = Room::with("hotel")->orderBy("hotel_id")->get();
+        return response()->json($rooms);
     }
 
     /**
@@ -36,10 +36,10 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        $hotel=Hotel::create($request->all());
+        $room=Room::create($request->all());
         $data=[
-            'message'=>'Hotel creacted successfuly',
-            'hotel'=>$hotel
+            'message'=>'Room creacted successfuly',
+            'room'=>$room
         ];
         return response()->json($data);
     }
@@ -47,14 +47,14 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotel $hotel)
+    public function show(Room $room)
     {
         $data=[
-            'message'=>'Hotel details',
-            'hotel'=>$hotel
+            'message'=>'Room details',
+            'room'=>$room
         ];
         return response()->json($data);
     }
@@ -62,10 +62,10 @@ class HotelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotel $hotel)
+    public function edit(Room $room)
     {
         //
     }
@@ -74,40 +74,37 @@ class HotelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, Room $room)
     {
-        $hotel->name = $request->name;
-        $hotel->img = $request->img;
-        $hotel->description = $request->description ;
-        $hotel->localization = $request->localization;
-        $hotel->phone_number = $request->phone_number;
-        $hotel->email = $request->phone_email;
-        // TODO: Añadir equipamiento al los hoteles
-        // $hotel->equipment = $request->equipment;
-        $hotel->save();
+        $room->name = $request->name;
+        $room->type = $request->type;
+        $room->img = $request->img;
+        $room->description = $request->description;
+        $room->price = $request->price;
+        $room->hotel_id = $request->hotel_id;
+        $room->save();
         $data=[
-            'message'=>'Hotel updated successfuly',
-            'hotel'=>$hotel
+            'message'=>'Room updated successfuly',
+            'room'=>$room
         ];
         return response()->json($data);
-    
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy(Room $room)
     {
-        $hotel->delete();
+        $room->delete();
         $data=[
-            'message'=>'Hotel deleted successfuly',
-            'hotel'=>$hotel
+            'message'=>'Room deleted successfuly',
+            'room'=>$room
         ];
         return response()->json($data);
     }
