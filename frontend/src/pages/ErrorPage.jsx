@@ -10,7 +10,7 @@ const ErrorPage = () => {
         return (
             <div className='error' style={{color:'white'}}>
                 Error:{message}
-                <p>Para tener acceso a esta página, inicie sesión o regístrese si aun no lo ha hecho.</p>
+                <p>To access this page, please login or register if you haven't already.</p>
             </div>
         )
 }
