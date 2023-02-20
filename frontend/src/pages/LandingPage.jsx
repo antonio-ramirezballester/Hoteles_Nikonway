@@ -6,38 +6,38 @@ import HotelService from '../services/HotelService'
 import './LeadingPage.css'
 const LandingPage = () => {
 
-  const { user } = useContext(UserContext);
-  const [landingInfo, setLandingInfo] = useState(null)
-  const navigate = useNavigate();
+  // const { user } = useContext(UserContext);
+  // const [landingInfo, setLandingInfo] = useState(null)
+  // const navigate = useNavigate();
   const [hotels, setHotels] = useState([])
 
-  const getLandingInfo = async (token) => {
-    const options = {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'x-access-token': token //esto protege la página
-      },
-    };
-    console.log(options);
+  // const getLandingInfo = async (token) => {
+  //   const options = {
+  //     method: 'GET',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json',
+  //       'x-access-token': token //esto protege la página
+  //     },
+  //   };
+  //   console.log(options);
 
-    try {
-      const response = await fetch('http://localhost:4001/landing', options);
-      const data = await response.json();
-      setLandingInfo(data.message);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //   try {
+  //     const response = await fetch('http://localhost:4001/landing', options);
+  //     const data = await response.json();
+  //     setLandingInfo(data.message);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  useEffect(() => {
-    if (!user.name) {
-      navigate("/error/1");
-    } else {
-      getLandingInfo(user.token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!user.name) {
+  //     navigate("/error/1");
+  //   } else {
+  //     getLandingInfo(user.token);
+  //   }
+  // }, []);
 
   useEffect(() => {
     HotelService.getHotels().then(data => setHotels(data));

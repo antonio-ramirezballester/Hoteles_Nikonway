@@ -1,3 +1,4 @@
+import { color } from '@mui/system';
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -7,8 +8,9 @@ const ErrorPage = () => {
     if (code==="1") message="restricted access" 
 
         return (
-            <div className='error'>
+            <div className='error' style={{color:'white'}}>
                 Error:{message}
+                <p>Para tener acceso a esta página, inicie sesión o regístrese si aun no lo ha hecho.</p>
             </div>
         )
 }

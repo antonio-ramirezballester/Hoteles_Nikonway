@@ -21,8 +21,8 @@ function App() {
             <Route element={<RegistrationFormPage />} path="/registration" />
             <Route element={<LandingPage />} path="/landing" />
             <Route element={<ErrorPage />} path="/error/:code" />
-            <Route element={<RegistrationFormPage />} path="/" />
-            <Route element={<HotelPage/>} path="/producto/:idProducto"/>
+            <Route element={<LandingPage />} path="/" />
+            <Route element={<HotelPage/>} path="/hotel/:idProducto"/>
           </Routes>
         </BrowserRouter>
       </UserState>
