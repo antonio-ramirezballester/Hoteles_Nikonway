@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import UserContext from "../context/user/UserContext";
 import { useNavigate } from 'react-router-dom'
 import { URL_API_HOTELS } from '../constants/http_constants.js';
-
+import { Button } from '@mui/material';
+import './HotelPage.css'
 
 const HotelPage = () => {
 
@@ -71,11 +72,15 @@ const HotelPage = () => {
     <main>
         {/* Si existe hotel, lo pinta, sino no */}
         {
-            hotel &&  
-            <article key={hotel.id}>
+            hotel &&
+            <>
+              <article className='hotelInfo' key={hotel.id}>
                 <h2>{hotel.name}</h2>
-                <button onClick={()=> inicio(-1)}>Inicio</button> 
-            </article>
+                <p><span className='locPhoEma'>Localization:</span> {hotel.localization} <span className='locPhoEma'>Phone_number:</span> {hotel.phone_number} <span className='locPhoEma'>Email:</span> {hotel.email}</p>
+                <p className='description'>{hotel.description}</p>
+              </article>
+              <div className='goBack'><Button variant="contained" onClick={()=> inicio(-1)} style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Go back</Button></div>
+            </>
         }
     </main>
   )

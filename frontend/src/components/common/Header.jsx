@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../../context/user/UserContext';
+import { FormHotels } from '../hotels/FormHotels';
 import { Button } from '@mui/material';
 import './Header.css'
 
@@ -29,6 +30,7 @@ const Header = () => {
   return (
     <header>
       <h1 className='h1Header'>Hotels Nikonway</h1>
+      <FormHotels/>
 
       {user.name ?
         <nav className='login'>

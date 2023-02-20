@@ -1,0 +1,19 @@
+.hotelInfo{
+    text-align: center;
+    background-color: var(--naranja);
+}
+
+.locPhoEma{
+    font-weight: bold;
+}
+
+.description{
+    font-size: 20px;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+}
+
+.goBack{
+    text-align: center;
+}

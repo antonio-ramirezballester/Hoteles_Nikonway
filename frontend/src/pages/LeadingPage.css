@@ -23,7 +23,7 @@
     text-transform: uppercase;
 }
 
-main{
+.mainLandingPage{
     display: grid; 
     grid-template-columns: repeat(4, auto);
     margin: 3rem;

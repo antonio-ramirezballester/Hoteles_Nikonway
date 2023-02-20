@@ -49,7 +49,7 @@ const LandingPage = () => {
         <h1 id="salute">¡Welcome to Nikonway Hotels!</h1>
         <p>Discover the Mediterranean paradise at our hotel in Mallorca, where luxury and comfort merge to offer you an unforgettable seaside vacation experience.</p>
       </section>
-      <main>
+      <main className='mainLandingPage'>
         <ListHotels hotels={hotels}/>
       </main>
     </>

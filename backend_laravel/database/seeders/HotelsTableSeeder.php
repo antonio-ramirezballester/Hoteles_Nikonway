@@ -29,7 +29,7 @@ class HotelsTableSeeder extends Seeder
         $hotel2->img="https://media-cdn.holidaycheck.com/w_768,h_432,c_fill,q_auto,f_auto/ugc/images/d702ab5b-707c-3396-b2cc-884b4ab69716";
         $hotel2->description="Welcome to this intimate and atypical island home, which is part of the seafront of Palma, in the historic heart of the city. You will sleep in rooms and suites loft style, with stunning sea views and to Palma's bay.";
         $hotel2->localization="Palma";
-        $hotel2->phone_number="971 72 81 10";
+        $hotel2->phone_number="971728110";
         $hotel2->email="calatrava@nikonway.com";
         $hotel2->save();
     }
