@@ -1,0 +1,9 @@
+article{
+
+    align-items: center;
+}
+
+.employees{
+    color: white;
+    display: flex;
+}

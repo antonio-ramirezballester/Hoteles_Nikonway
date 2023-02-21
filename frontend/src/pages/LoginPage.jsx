@@ -3,6 +3,7 @@ import UserContext from "../context/user/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { Button } from '@mui/material';
+import './Login&RegistrationFormPages.css'
 
 const LoginPage = () => {
 

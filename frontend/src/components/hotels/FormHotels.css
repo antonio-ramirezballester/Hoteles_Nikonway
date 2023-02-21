@@ -1,0 +1,9 @@
+article{
+
+    align-items: center;
+}
+
+.hotels{
+    color: white;
+    display: flex;
+}

@@ -11,6 +11,7 @@ import HotelPage from './pages/HotelPage';
 import ManageHotelsPage from './pages/ManageHotelsPage';
 import ManageRoomsPage from './pages/ManageRoomsPage';
 import ManageEmployeesPage from './pages/ManageEmployeesPage';
+import Footer from './components/common/Footer';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route element={<ManageRoomsPage/>} path="/ManageRoomsPage"/>
             <Route element={<ManageEmployeesPage/>} path="/ManageEmployeesPage"/>
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </UserState>
     </div>

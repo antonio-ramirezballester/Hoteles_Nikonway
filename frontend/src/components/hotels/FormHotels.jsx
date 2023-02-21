@@ -1,81 +1,62 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import HotelService from '../../services/HotelService.js'
-import UserContext from '../../context/user/UserContext';
+import React, { useContext, useEffect, useState } from 'react'
+import HotelService from '../../services/HotelService'
+import UserContext from "../../context/user/UserContext";
+import { useNavigate } from "react-router-dom";
+import './FormHotels.css'
 
+const FormHotels = () => {
 
-export const FormHotels = () => {
+  const { user } = useContext(UserContext);
+  const [landingInfo, setLandingInfo] = useState(null)
+  const navigate = useNavigate();
+  const [hotels, setHotels] = useState([])
 
-    const { user, setUser } = useContext(UserContext);
-    const [hotels, setHotels] = useState([]);
-    const [message, setMessage] = useState("");
+  useEffect(() => {
+    HotelService.getHotels().then(data => setHotels(data));
+  }, []);
 
-    const inputName = useRef(null);
-    const inputImg = useRef(null);
-    const inputDescription = useRef(null);
-    const inputLocalization = useRef(null);
-    const inputPhoneNumber = useRef(null);
-    const inputEmail = useRef(null);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const hotel = {
-            "name": inputName.current.value,
-            "img": inputImg.current.value,
-            "description": inputDescription.current.value,
-            "localization": inputLocalization.current.value,
-            "phone_number": inputPhoneNumber.current.value,
-            "email": inputEmail.current.value
-        }
-
-        HotelService.new(hotel).then(data => {
-            document.getElementById("frm-hotel").reset();
-            setMessage(data.message)
-        });
-    }  
-    
-    const handleDelete = (id) => {
-        HotelService.delete(id).then(data => setMessage(data.message));
-    }
+        const getLandingInfo = async (token) => {
+     const options = {
+       method: 'GET',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json',
+         'x-access-token': token //esto protege la página
+       },
+     };
+     console.log(options);
+     try {
+       const response = await fetch('http://localhost:4001/landing', options);
+       const data = await response.json();
+       setLandingInfo(data.message);
+     } catch (error) {
+       console.log(error);
+     }
+   }
+   useEffect(() => {
+     if (!user.name) {
+       navigate("/error/1");
+     } else {
+       getLandingInfo(user.token);
+     }
+   }, []);
 
   return (
-    <div>
-        <form id="frm-hotel" name="frm-hotel" onSubmit={e => handleSubmit(e)}>
-            <h2>Hotel data</h2>
-            <section className='firstRow'>
-                <div className='inputBox'>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name"/>
-                </div>
-                <div className='inputBox'>
-                    <label htmlFor="img">Img</label>
-                    <input type="text" id="img"/>
-                </div>
-                <div className='inputBox'>
-                    <label htmlFor="description">Description</label>
-                    <input type="text" id="description"/>
-                </div>
-                <div className='inputBox'>
-                    <label htmlFor="localization">Localization</label>
-                    <input type="text" id="localization"/>
-                </div>
-                <div className='inputBox'>
-                    <label htmlFor="phone_number">Phone number</label>
-                    <input type="text" id="phone_number"/>
-                </div>
-                <div className='inputBox'>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email"/>
-                </div>
-            </section>
-            <section className='panelButton'>
-                <button>New hotel</button>
-            </section>
-
-        </form>
-    {message && <div className='action-message'>{message}</div>}
-    </div>
-
+    <>
+      <h1>HOTELS</h1>
+    {
+        hotels.map(hotel => 
+            <article className='hotels' key={hotel.id}>
+                <p>ID: {hotel.id}</p>
+                <p>NAME: {hotel.name}</p>
+                <p>LOCALIZATION: {hotel.localization}</p>
+                <p>PHONE_NUMBER: {hotel.phone_number}</p>
+                <p>EMAIL: {hotel.email}</p>
+            </article>
+        )   
+    }
+    </>
   )
 }
+
 export default FormHotels
