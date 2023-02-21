@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('img')->default("https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png");
             $table->string('description')->default("No description");
-            $table->string('localization')->default("No localization");
+            $table->string('localization')->default("Palma");
             $table->string('phone_number')->default("No phone number");
             $table->string('email')->default("No email");
             // TODO: Añadir equipamiento al los hoteles

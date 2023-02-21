@@ -72,10 +72,11 @@ const RegistrationFormPage = () => {
                     <p><input type="phone" ref={inputPhone} placeholder="phone" /></p>
                     <p><input type="password" ref={inputPass1} placeholder="password" /></p>
                     <p><input type="password" ref={inputPass2} placeholder="password2" /></p>
-                    <input type="submit" value="Enviar" />
+                    <Button variant="contained" type="submit" value="Enviar" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Enviar</Button>
+                    {/* <input type="submit" value="Enviar" /> */}
                 </form>
                 <p style={{color:'white'}}> 
-                    If you already have and account: <span><Link to="/login"><Button variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}>Login</Button></Link></span>
+                    If you already have and account: <span><Link to="/login"><Button variant="Outlined" style={{color:'var(--naranja)', border:'1px solid var(--naranja)'}}>Login</Button></Link></span>
                 </p>
             </div>
 

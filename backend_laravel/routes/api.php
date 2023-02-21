@@ -26,8 +26,13 @@ Route::put('/hotels/{hotel}', 'App\Http\Controllers\HotelController@update');
 Route::delete('/hotels/{hotel}', 'App\Http\Controllers\HotelController@destroy');
 
 Route::get('/rooms', 'App\Http\Controllers\RoomController@index');
-Route::get('/rooms/search/{room}', 'App\Http\Controllers\RoomController@searchRoomsByTitle');
 Route::post('/rooms', 'App\Http\Controllers\RoomController@store');
 Route::get('/rooms/{room}', 'App\Http\Controllers\RoomController@show');
 Route::put('/rooms/{room}', 'App\Http\Controllers\RoomController@update');
 Route::delete('/rooms/{room}', 'App\Http\Controllers\RoomController@destroy');
+
+Route::get('/employes', 'App\Http\Controllers\EmployeController@index');
+Route::post('/employes', 'App\Http\Controllers\EmployeController@store');
+Route::get('/employes/{employe}', 'App\Http\Controllers\EmployeController@show');
+Route::put('/employes/{employe}', 'App\Http\Controllers\EmployeController@update');
+Route::delete('/employes/{employe}', 'App\Http\Controllers\EmployeController@destroy');

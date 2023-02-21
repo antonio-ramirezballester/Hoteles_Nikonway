@@ -1,15 +1,15 @@
-import { URL_API_EMPLOYE, HEADERS } from '../constants/http_constants.js';
+import { URL_API_EMPLOYEES, HEADERS } from '../constants/http_constants.js';
 
-export default class Employeervice {
+export default class Employeeservice {
 
-    static getEmploye() {
-        return fetch(URL_API_EMPLOYE)
+    static getEmployees() {
+        return fetch(URL_API_EMPLOYEES)
             .then(res => res.json())
             .catch(error => error);
     }
 
     static getRoomById(id) {
-        return fetch(`${URL_API_EMPLOYE}/${id}`)
+        return fetch(`${URL_API_EMPLOYEES}/${id}`)
             .then(res => res.json())
             .catch(error => error);
     }
@@ -20,7 +20,7 @@ export default class Employeervice {
             headers: HEADERS,
             body: JSON.stringify(params)
         };
-        return fetch(URL_API_EMPLOYE, options)
+        return fetch(URL_API_EMPLOYEES, options)
             .then(response => response.json())
             .catch(error => error);
     }
@@ -31,14 +31,14 @@ export default class Employeervice {
             headers: HEADERS,
             body: JSON.stringify(params)
         };
-        return fetch(URL_API_EMPLOYE, options)
+        return fetch(URL_API_EMPLOYEES, options)
             .then(response => response.json())
             .catch(error => error);
     }
 
     static delete(id) {
         const options = { method: 'DELETE' };
-        return fetch(`${URL_API_EMPLOYE}/${id}`, options)
+        return fetch(`${URL_API_EMPLOYEES}/${id}`, options)
             .then(response => response.json())
             .catch(error => error);
     }

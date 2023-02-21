@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { URL_API_HOTELS, URL_API_ROOMS } from '../constants/http_constants.js';
 import { Button } from '@mui/material';
 import './HotelPage.css'
-import { margin } from '@mui/system';
 
 const HotelPage = () => {
 
@@ -99,8 +98,8 @@ const HotelPage = () => {
                 <article className='roomInfo' key={room.id}>
                   <img src={room.img} width="500px"/>
                   <div className='namTypDes'>
-                    <h2>{room.name}</h2>
-                    <h3>{room.type}</h3>
+                    <h2 style={{color:'var(--naranja)'}}>{room.name}</h2>
+                    <h3><u>{room.type}</u></h3>
                     <p>{room.description}</p>
                   </div>
                   <div className='priRes'>
