@@ -8,6 +8,9 @@ import LandingPage from './pages/LandingPage';
 import UserState from "./context/user/UserState";
 import Header from './components/common/Header';
 import HotelPage from './pages/HotelPage';
+import ManageHotelsPage from './pages/ManageHotelsPage';
+import ManageRoomsPage from './pages/ManageRoomsPage';
+import ManageEmployeesPage from './pages/ManageEmployeesPage';
 
 function App() {
 
@@ -23,6 +26,9 @@ function App() {
             <Route element={<ErrorPage />} path="/error/:code" />
             <Route element={<LandingPage />} path="/" />
             <Route element={<HotelPage/>} path="/hotel/:idProducto"/>
+            <Route element={<ManageHotelsPage/>} path="/ManageHotelsPage"/>
+            <Route element={<ManageRoomsPage/>} path="/ManageRoomsPage"/>
+            <Route element={<ManageEmployeesPage/>} path="/ManageEmployeesPage"/>
           </Routes>
         </BrowserRouter>
       </UserState>

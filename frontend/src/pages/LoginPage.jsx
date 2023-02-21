@@ -2,6 +2,7 @@ import React, { useRef, useContext } from 'react'
 import UserContext from "../context/user/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import { Button } from '@mui/material';
 
 const LoginPage = () => {
 
@@ -59,7 +60,7 @@ const LoginPage = () => {
         <form  autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
           <p><input type="text" name="username" ref={inputUsername} placeholder="email" /></p>
           <p><input type="password" name="password" ref={inputPass} placeholder="password" /></p>
-          <input type="submit" value="Enviar" />
+          <Button variant="contained" style={{backgroundColor:'var(--naranja)', color:'var(--negro)'}}type="submit" value="Enviar">Enviar</Button>
         </form>
         {errorMessage && <div className='error'>{errorMessage}</div>}
         

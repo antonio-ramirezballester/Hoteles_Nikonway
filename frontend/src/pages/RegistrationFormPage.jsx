@@ -2,8 +2,6 @@ import React, { useRef, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from "../context/user/UserContext";
 import { useNavigate } from "react-router-dom";
-// import { TextField, Button } from '@mui/material';
-// import SendIcon from '@mui/icons-material/Send';
 import { Button } from '@mui/material';
 
 const RegistrationFormPage = () => {
@@ -68,19 +66,12 @@ const RegistrationFormPage = () => {
         <div className='form-container'>
             <div>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    {/* <TextField id="user-name" label="Name" variant="outlined" ref={inputName}/>
-                    <TextField id="user-surname" label="Surname" variant="outlined" ref={inputSurnames}/>
-                    <TextField id="user-email" type="email" label="Email" variant="outlined" ref={inputEmail}/>
-                    <TextField id="user-phone" type="phone" label="Phone" variant="outlined" ref={inputPhone}/>
-                    <TextField id="user-password1" type="password" label="Password" variant="outlined" ref={inputPass1}/>
-                    <TextField id="user-password2" type="password" label="Password" variant="outlined" ref={inputPass2}/> */}
                     <p><input type="text" ref={inputName} placeholder="name" /></p>
                     <p><input type="text" ref={inputSurnames} placeholder="surname" /></p>
                     <p><input type="email" ref={inputEmail} placeholder="email" /></p>
                     <p><input type="phone" ref={inputPhone} placeholder="phone" /></p>
                     <p><input type="password" ref={inputPass1} placeholder="password" /></p>
                     <p><input type="password" ref={inputPass2} placeholder="password2" /></p>
-                    {/* <Button type="submit" variant="outlined" value="Enviar" endIcon={<SendIcon />}>Enviar</Button> */}
                     <input type="submit" value="Enviar" />
                 </form>
                 <p style={{color:'white'}}> 

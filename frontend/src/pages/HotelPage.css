@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap');
+/* font-family: 'Advent Pro', sans-serif; */
+
 .hotelInfo{
     text-align: center;
     background-color: var(--naranja);
+    margin-top: -3vw;
+    padding-bottom: 1vw;
+}
+
+.hotelInfo h1{
+    font-size: 70px;
+    margin-bottom: 1vw;
+    font-family: 'Advent Pro', sans-serif;
 }
 
 .locPhoEma{
@@ -8,12 +19,34 @@
 }
 
 .description{
-    font-size: 20px;
+    font-size: 25px;
     margin: auto;
-    width: 60%;
+    width: 80%;
     text-align: center;
+}
+
+.roomInfo{
+    padding-top: 1rem;
+    display: flex;
+    color: var(--gris);
+    padding-left: 1rem;
+}
+
+.namTypDes{
+    margin-left: 1.5rem;
+    width: 30vw;
+}
+
+.namTypDes p{
+    font-size: 25px;
+}
+
+.priRes{
+    padding-left: 20vw;
+    margin-top: 50px;
 }
 
 .goBack{
     text-align: center;
+    padding-bottom: 1rem;
 }

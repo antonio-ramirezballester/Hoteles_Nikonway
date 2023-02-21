@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap');
+/* font-family: 'Advent Pro', sans-serif; */
+
 html{
     --naranja: #ff914c;
     --gris: #a69d9a;
@@ -14,6 +17,8 @@ header{
 .h1Header{
     color: var(--naranja);
     padding-left: 5vw;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 50px;
 }
 
 nav{
@@ -28,4 +33,10 @@ nav a{
 
 span{
     padding-left: 1vw;
+}
+
+.manages{
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
 }

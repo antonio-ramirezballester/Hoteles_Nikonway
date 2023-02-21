@@ -39,7 +39,7 @@ export const FormHotels = () => {
     }
 
   return (
-    <div> {user.rol === "ADMIN" &&
+    <div>
         <form id="frm-hotel" name="frm-hotel" onSubmit={e => handleSubmit(e)}>
             <h2>Hotel data</h2>
             <section className='firstRow'>
@@ -72,9 +72,10 @@ export const FormHotels = () => {
                 <button>New hotel</button>
             </section>
 
-        </form>}
+        </form>
     {message && <div className='action-message'>{message}</div>}
     </div>
 
   )
 }
+export default FormHotels
